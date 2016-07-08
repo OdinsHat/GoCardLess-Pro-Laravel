@@ -24,7 +24,7 @@ class GoCardLessServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-     
+        $this->package('fhferreira/gocardless', 'fhferreira/gocardless');
     }
 
     /**
