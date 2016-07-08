@@ -24,9 +24,7 @@ class GoCardLessServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/config' => config_path('gocardless.php'),
-        ]);
+     
     }
 
     /**
@@ -45,7 +43,7 @@ class GoCardLessServiceProvider extends ServiceProvider
 
             $environment = \GoCardlessPro\Environment::SANDBOX;
             if ($env == 'live') {
-                environment = \GoCardlessPro\Environment::LIVE;
+                $environment = \GoCardlessPro\Environment::LIVE;
             }
 
             $access_token = isset($config['access_token']) ? $config['access_token'] : null;
