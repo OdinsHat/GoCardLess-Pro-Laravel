@@ -24,7 +24,9 @@ class GoCardLessServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+        $this->publishes([
+            __DIR__ . '/config' => config_path('gocardless.php'),
+        ]);
     }
 
     /**
@@ -35,22 +37,6 @@ class GoCardLessServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $loader = $this->app['config']->getLoader();
-
-        // Get environment name
-        $env = $this->app['config']->getEnvironment();
-
-        // Add package namespace with path set, override package if app config exists in the main app directory
-        if (file_exists(app_path() . '/config/packages/fhferreira/gocardless')) {
-            $loader->addNamespace('gocardless', app_path() . '/config/packages/fhferreira/gocardless');
-        } else {
-            $loader->addNamespace('gocardless', __DIR__ . '/../../config');
-        }
-
-        $config = $loader->load($env, 'config', 'gocardless');
-
-        $this->app['config']->set('gocardless::config', $config);
-
         $this->app->bindShared('gocardless', function ($app) {
             
             $config = $app['config']->get('gocardless');
@@ -69,6 +55,7 @@ class GoCardLessServiceProvider extends ServiceProvider
               'environment'  => environment
             ));
         });
+
         $this->app->alias('gocardless', 'GoCardlessPro\Client');
     }
 
