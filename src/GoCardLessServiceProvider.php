@@ -43,9 +43,9 @@ class GoCardLessServiceProvider extends ServiceProvider
 
             $env = isset($config['environment']) ? $config['environment'] : null;
 
-            $environment = \GoCardlessPro\Environment::SANDBOX
+            $environment = \GoCardlessPro\Environment::SANDBOX;
             if ($env == 'live') {
-                environment = \GoCardlessPro\Environment::LIVE
+                environment = \GoCardlessPro\Environment::LIVE;
             }
 
             $access_token = isset($config['access_token']) ? $config['access_token'] : null;
