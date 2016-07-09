@@ -14,4 +14,4 @@ In the $aliases array add the following facade for this package.
 
 Run the publish for create the config file on app/config/packages/fhferreira/gocardless-pro-laravel
 
-> php artisan vendor:publish fhferreira/gocardless-pro-laravel
+> php artisan config:publish fhferreira/gocardless-pro-laravel

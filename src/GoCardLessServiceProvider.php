@@ -24,7 +24,7 @@ class GoCardLessServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('fhferreira/gocardless-pro-laravel', null, __DIR__ . '../../config');
+        $this->package('fhferreira/gocardless-pro-laravel', 'fhferreira/gocardless-pro-laravel',  __DIR__ . '/config');
     }
 
     /**
@@ -35,10 +35,12 @@ class GoCardLessServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        \Config::addNamespace('fhferreira/gocardless-pro-laravel', app_path('config/packages/fhferreira/gocardless-pro-laravel'));
+
         $this->app->bindShared('gocardless-pro-laravel', function ($app) {
             
-            $config = $app['config']->get('gocardless-pro-laravel::config');
-
+            $config = $app['config']->get('fhferreira/gocardless-pro-laravel::config');
+            
             $env = isset($config['environment']) ? $config['environment'] : null;
 
             $environment = \GoCardlessPro\Environment::SANDBOX;
