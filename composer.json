@@ -18,7 +18,7 @@
 	"require": {
 		"php": ">=5.3.7",
 		"illuminate/support": "~4.0",
-		"gocardless/gocardless-pro": "dev-master"
+		"gocardless/gocardless-pro": "*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.5"
@@ -28,5 +28,5 @@
         	"Fhferreira\\GoCardLess\\": "src/" 
         }
     },
-	"minimum-stability": "dev"
+	"minimum-stability": "stable"
 }
