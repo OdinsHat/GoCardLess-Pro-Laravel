@@ -29,6 +29,6 @@ class GoCardLess extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'gocardless';
+        return 'gocardless-pro-laravel';
     }
 }

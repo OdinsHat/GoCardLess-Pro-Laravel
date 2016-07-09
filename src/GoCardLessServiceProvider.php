@@ -24,7 +24,7 @@ class GoCardLessServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('fhferreira/gocardless', 'fhferreira/gocardless');
+        $this->package('fhferreira/gocardless-pro-laravel', null, __DIR__ . '../../config');
     }
 
     /**
@@ -35,9 +35,9 @@ class GoCardLessServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bindShared('gocardless', function ($app) {
+        $this->app->bindShared('gocardless-pro-laravel', function ($app) {
             
-            $config = $app['config']->get('gocardless');
+            $config = $app['config']->get('gocardless-pro-laravel::config');
 
             $env = isset($config['environment']) ? $config['environment'] : null;
 
@@ -54,7 +54,7 @@ class GoCardLessServiceProvider extends ServiceProvider
             ));
         });
 
-        $this->app->alias('gocardless', 'GoCardlessPro\Client');
+        $this->app->alias('gocardless-pro-laravel', 'GoCardlessPro\Client');
     }
 
     /**
@@ -66,7 +66,7 @@ class GoCardLessServiceProvider extends ServiceProvider
     public function provides()
     {
         return array(
-            'gocardless'
+            'gocardless-pro-laravel'
         );
     }
 }
