@@ -56,7 +56,7 @@ class GoCardLessServiceProvider extends ServiceProvider
             ));
         });
 
-        $this->app->alias('gocardless-pro-laravel', 'GoCardlessPro\Client');
+        $this->app->alias('gocardless-pro-laravel', 'Fhferreira\GoCardLess\Facades\GoCardLess');
     }
 
     /**
