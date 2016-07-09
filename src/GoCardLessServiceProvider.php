@@ -50,7 +50,7 @@ class GoCardLessServiceProvider extends ServiceProvider
 
             return new \GoCardlessPro\Client(array(
               'access_token' => $access_token,
-              'environment'  => environment
+              'environment'  => $environment
             ));
         });
 
