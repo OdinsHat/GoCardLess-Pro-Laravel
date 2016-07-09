@@ -11,3 +11,7 @@ In the $providers array add the following service provider for this package.
 In the $aliases array add the following facade for this package.
 
 > 'GoCardLess' => 'Fhferreira\GoCardLess\Facades\GoCardLess',
+
+Run the publish for create the config file on app/config/packages/fhferreira/gocardless-pro-laravel
+
+> php artisan vendor:publish fhferreira/gocardless-pro-laravel
