@@ -28,5 +28,5 @@
         	"Fhferreira\\GoCardLess\\": "src/" 
         }
     },
-	"minimum-stability": "dev-master"
+	"minimum-stability": "dev"
 }
