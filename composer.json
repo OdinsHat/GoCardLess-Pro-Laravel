@@ -17,7 +17,6 @@
 	],
 	"require": {
 		"php": ">=5.3.7",
-		"illuminate/support": "~4.0",
 		"gocardless/gocardless-pro": "*"
 	},
 	"require-dev": {
